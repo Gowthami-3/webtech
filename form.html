@@ -1,0 +1,110 @@
+<html>
+		<head>
+			<title>Form</title>
+			<style>
+			h1{
+				text-align:center;
+				color:red;
+				}
+			form{
+                                background-color:lightgreen;
+				font-size:23px;
+				}
+				p{
+				text-align:center;
+				color:red;
+				font-size:15px;
+				}
+			</style>
+			<script>
+				function validateForm() {
+				var x = document.forms["myForm"]["fname"].value;
+				if (x == "") {
+					text ="*Name must be filled out";
+					document.getElementById("fn").innerHTML = text;
+					}
+				else{
+					text ="";
+					document.getElementById("fn").innerHTML = text;
+					}
+                                var z = document.forms["myForm"]["age"].value;
+				if (z == "") {
+					text ="*Enter Age";
+					document.getElementById("a").innerHTML = text;
+					}
+				else{
+					text ="";
+					document.getElementById("a").innerHTML = text;
+					}
+                                var n = document.forms["myForm"]["from"].value;
+				if (n == "") {
+					text ="*Enter the place";
+					document.getElementById("from").innerHTML = text;
+					}
+				else{
+					text ="";
+					document.getElementById("from").innerHTML = text;
+					}
+                                var g = document.forms["myForm"]["to"].value;
+				if (g == "") {
+					text ="*Enter the place";
+					document.getElementById("t").innerHTML = text;
+					}
+				else{
+					text ="";
+					document.getElementById("t").innerHTML = text;
+					}
+				var m = document.forms["myForm"]["mobile"].value;
+				if (m=="") {
+					text ="*Enter Mobile Number";
+					document.getElementById("m").innerHTML = text;
+					}
+				else if(isNaN(m)) {
+					text ="*Enter a valid number";
+					document.getElementById("m").innerHTML = text;
+					}
+				else{
+					text ="";
+					document.getElementById("m").innerHTML = text;
+					}
+				var e = document.forms["myForm"]["mail"].value;	
+				if (e=="") {
+					text ="*Enter Mail-ID";
+					document.getElementById("e").innerHTML = text;
+					}
+				else if( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(m)) {
+					text ="";
+					document.getElementById("e").innerHTML = text;
+					}
+				else{
+					text ="*Enter a valid Mail-ID";
+					document.getElementById("e").innerHTML = text;
+					}
+				return false;
+				}
+</script>
+		</head>
+	<body>
+		<h1>BOOKING FORM</h1>
+		<hr>
+		<br>
+			<form name="myForm" onsubmit="return validateForm()" method="post">
+			        Name              :<br><input type="text" name="fname"><br>
+				<p id="fn"></p>
+                                Age               :<br><input type="text" name="age"><br
+                                <p id="a"></p>
+                                Gender:<br>
+                                <input type="radio" name="fGender" value="Male">Male<br>
+                                <input type="radio" name="fGender" value="Female">Female<br>
+                                From              :<br><input type="text" name="from"><br>
+                                <p id="from"></p>
+                                To                :<br><input type="text" name="to"><br>
+                                <p id="t"></p>
+				Mobile            :<br><input type="text" name="mobile"><br>
+				<p id="m"></p>
+				E-mail            :<br><input type="text" name="mail"><br>
+				<p id="e"></p>
+				<input type="submit" value="Submit" style="height:30px;width:100px">
+			</form>
+	</body>
+</html>
